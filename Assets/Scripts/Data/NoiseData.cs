@@ -13,6 +13,8 @@ public class NoiseData : UpdatableData
     public int seed;
     public Vector2 offset;
     public Noise.NormalizeMode normalizeMode;
+    public float globalNormalizeModeFactor = 1.7f;
+
 
     
     protected override void OnValidate()
