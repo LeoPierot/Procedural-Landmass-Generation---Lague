@@ -29,8 +29,10 @@ public class MapGenerator : MonoBehaviour
 
     void Awake()
     {
+        textureData.ApplyToMaterial(terrainMaterial);
         falloffMap = FalloffGenerator.GenerateFallOffMap(mapChunkSize);
-        
+        textureData.UpdateMeshHeights(terrainMaterial, terrainData.minHeight, terrainData.maxHeight);
+
     }
 
     void OnTextureValuesUpdated()
@@ -62,6 +64,8 @@ public class MapGenerator : MonoBehaviour
 
     public void DrawMapInEditor()
     {
+        textureData.UpdateMeshHeights(terrainMaterial, terrainData.minHeight, terrainData.maxHeight);
+
         MapData mapData = GenrateMapData(Vector2.zero);
         MapDisplay mapDisplay = FindObjectOfType<MapDisplay>();
         switch(drawMode)
@@ -160,7 +164,6 @@ public class MapGenerator : MonoBehaviour
             }
         }        
 
-        textureData.UpdateMeshHeights(terrainMaterial, terrainData.minHeight, terrainData.maxHeight);
 
         return new MapData(heightMap);
         

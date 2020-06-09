@@ -16,7 +16,7 @@ public class NoiseData : UpdatableData
     public float globalNormalizeModeFactor = 1.7f;
 
 
-    
+    #if UNITY_EDITOR
     protected override void OnValidate()
     {
         if(lacunarity < 1)
@@ -30,4 +30,5 @@ public class NoiseData : UpdatableData
         
         base.OnValidate();
     }
+    #endif
 }

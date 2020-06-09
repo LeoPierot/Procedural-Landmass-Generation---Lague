@@ -19,5 +19,5 @@ MonoBehaviour:
   persistance: 0.491
   seed: 0
   offset: {x: 0, y: 0}
-  normalizeMode: 0
+  normalizeMode: 1
   globalNormalizeModeFactor: 1.7
